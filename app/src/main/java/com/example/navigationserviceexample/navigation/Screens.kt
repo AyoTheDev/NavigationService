@@ -7,20 +7,21 @@ package com.example.navigationserviceexample.navigation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.navigationserviceexample.screens.ScreenOneFragment
+import com.example.navigationserviceexample.screens.ScreenTwoFragment
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 
 class Screens {
 
     /**
      * --------------------------------------------------------------------------
-     * This is where you define your screens which return which ever fragment you're inflating
-     * (replace with your fragments)
+     * This is where you define your screens which return a fragment
      * --------------------------------------------------------------------------
      */
 
     class ExampleScreenOne(private val bundle: Bundle?) : SupportAppScreen() {
         override fun getFragment(): Fragment? {
-            val fragment = Fragment()
+            val fragment = ScreenOneFragment()
             fragment.arguments = bundle
             return fragment
         }
@@ -28,7 +29,7 @@ class Screens {
 
     class ExampleScreenTwo : SupportAppScreen() {
         override fun getFragment(): Fragment? {
-            return Fragment()
+            return ScreenTwoFragment()
         }
     }
 
